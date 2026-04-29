@@ -4,11 +4,33 @@ Personal CLI tools for better developer experience.
 
 ## Installation
 
-1. Clone this repository
-2. Run `npm install`
-3. Run `./index.js git stashes` - it will prompt you to add the CLI to your PATH
-4. Restart your terminal or run `source ~/.zshrc`
-5. Use `adam git stashes` from anywhere
+1. Clone this repository:
+   ```bash
+   cd ~/dev
+   git clone https://github.com/dil-adam/adam-cli.git
+   cd adam-cli
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the CLI once to add it to your PATH:
+   ```bash
+   ./index.js git stashes
+   ```
+   It will prompt you to add the CLI to your PATH.
+
+4. Restart your terminal or run:
+   ```bash
+   source ~/.zshrc
+   ```
+
+5. Now you can use `adam` from anywhere:
+   ```bash
+   adam git stashes
+   ```
 
 ## Commands
 
