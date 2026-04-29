@@ -1,12 +1,17 @@
 #!/usr/bin/env node
 
-const { program } = require('commander');
-const inquirer = require('inquirer');
-const { execa } = require('execa');
-const chalk = require('chalk');
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
+import { program } from 'commander';
+import inquirer from 'inquirer';
+import { execa } from 'execa';
+import chalk from 'chalk';
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Check if CLI is in PATH
 async function isInPath() {
@@ -127,7 +132,7 @@ async function handleStashes() {
 
     // Execute action
     console.log(chalk.blue(`Running: git stash ${action} ${selectedStash}`));
-    const result = await execa('git', ['stash', action, selectedStash], {
+    await execa('git', ['stash', action, selectedStash], {
       cwd,
       stdio: 'inherit'
     });
